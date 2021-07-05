@@ -1,0 +1,442 @@
+li {
+	list-style-type: none;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+@media screen and (min-width: 100px) and (max-width: 834px) {
+	body {
+		margin: 0 0 0 0;
+		background: url(img/black-white.png) ;
+		background-size : 150% 400px;
+		background-position: -100px 74px;
+		background-repeat: no-repeat; 
+
+	}
+	main{
+		background-image: url(img/Slider.png) contain no-repeat;
+		margin: 0 0 0 0;
+		padding: 0 5vw 0 5vw;
+	}
+	.advertising{
+		width: 100%;
+		height: 430px;
+		padding : 40px 0 0 0;
+		color: white;
+	}
+	 /*форма*/
+	.from-input{
+		height: 2.8em;
+		width: 10em;
+		padding: 12px 20px;
+	}
+	.from-button{
+		height: 2.8em;
+		width: 10em;
+		background-color: #D51522;
+	}
+	/*новости*/
+	.title-news{
+		text-align: center;
+	 }
+	.block_menu {
+		font-family: Ubuntu;
+		margin: 0 0 0 0;
+		background-color: #F6F6F6;
+		height: 72px;
+	}
+	/*логотип*/
+	.logo_menu {
+		margin: 10px 0 0 14vw;
+	}
+	/*номер и город до нажатия кнопки меню*/
+	.h3-menu {
+		margin: 0;
+	}
+	.info-menu-top {
+		padding: 0;
+		float: right;
+		margin-top: 10px;
+		margin-right: 2vw;
+	}
+	.info-menu-top ul {
+		margin: 0 0 0 0px;
+		text-decoration: none;
+	}
+	.info-menu-top li a {
+		text-decoration: none;
+		list-style-type: none;
+		float: right;
+		color: #2B2B2B;
+	}
+	a {
+		text-decoration: none;
+	}
+	/*Скрываем чекбокс:*/
+	.hidden-menu-ticker {
+		display: none;
+	}
+	/*Стилизация кнопки открытия меню*/
+	.btn-menu {
+		color: #D51522;
+		border: 0px;
+		padding: 5px;
+		position: fixed;
+		top: 15px;
+		left: 5px;
+		cursor: pointer;
+		transition: left .23s;
+		z-index: 3;
+		width: 38px;
+		-webkit-transform: translateZ(0);
+		-webkit-backface-visibility: hidden;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 1px;
+	}
+	.btn-menu span {
+		display: block;
+		height: 5px;
+		background-color: #D51522;
+		margin: 5px 0 0;
+		transition: all .1s linear .23s;
+		position: relative;
+	}
+	.btn-menu span.first {
+		margin-top: 0;
+	}
+	/* Стилизация пунктов меню*/
+	.hidden-menu {
+		display: block;
+		position: fixed;
+		list-style: none;
+		
+		padding: 90px 0px 0px 0px;
+		margin: 0;
+		box-sizing: border-box;
+		width: 80vw;
+		/*background: -webkit-linear-gradient(0deg, #211F2A 77%, #FFFFFF 23%);
+		background: linear-gradient(0deg, #211F2A 77%, #FFFFFF 23%);*/
+		background:#FFFFFF ;
+		height: 100%;
+		top: 0;
+		left: -80vw;
+		transition: left .2s;
+		z-index: 2;
+		-webkit-transform: translateZ(0);
+		-webkit-backface-visibility: hidden;
+	}
+	.li-menu {
+		padding-left: 5vw;
+		padding-top: 10px;
+		/*padding: 10px 0;*/
+	}
+	.hidden-menu li a {
+		font-size: 15px;
+		color: #000;
+		padding: 6px 0px;
+	}
+	.info-menu {
+		    margin: 30px 0px 0 0px;
+    height: 100%;
+    width: 100%;
+    padding-top: 10vw;
+    padding-left: 5vw;
+    background:#211F2A;
+    	}
+	.info-menu li {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	.info-menu li a {
+		color: #FFFFFF;
+	}
+	/*Стили для работы меню:*/
+	.hidden-menu-ticker:checked~.btn-menu {
+		left: 10px;
+	}
+	.hidden-menu-ticker:checked~.hidden-menu {
+		left: 0;
+	}
+	.hidden-menu-ticker:checked~.btn-menu span.first {
+		-webkit-transform: rotate(45deg);
+		top: 10px;
+	}
+	.hidden-menu-ticker:checked~.btn-menu span.second {
+		opacity: 0;
+	}
+	.hidden-menu-ticker:checked~.btn-menu span.third {
+		-webkit-transform: rotate(-45deg);
+		top: -10px;
+	}
+	footer {
+		display: none;
+	}
+}
+@media screen and (min-width: 835px) and (max-width: 1010px) {
+	body{
+		
+		/*background: radial-gradient(circle, black, white);*/
+		background: url(img/black-white.png) 1920px 570px;
+		background-position: -240px 74px;
+		background-repeat: no-repeat; 
+	}
+	header {
+		/*margin: 0 0 0 0;*/
+		padding: 0 5vw 0 5vw;
+		/*margin: 0 15vw 0 15vw;*/
+		height: 150px;
+	}
+	main{
+		padding: 0 5vw 0 5vw;
+	}
+	.advertising{
+		width: 50%;
+		height: 430px;
+		padding : 40px 0 0 0;
+		color: white;
+	}
+	/*новости*/
+	.title-news{
+		text-align: center;
+	 }
+	 /*форма*/
+	.from-input{
+		height: 2.8em;
+		width: 10em;
+		padding: 12px 20px;
+	}
+	.from-button{
+		height: 2.8em;
+		width: 10em;
+		background-color: #D51522;
+	}
+	/*скрытие ненужно в десктопе*/
+	.hidden-menu-ticker {
+		display: none;
+	}
+	.hidden-menu {
+		display: inline-block;
+		margin: 25px 0 0 40px;
+		padding: 0;
+		z-index: 1;
+		float: left;
+	}
+	/*стиль меню*/
+	.hidden-menu>li {
+		text-decoration: none;
+		margin-right: 20px;
+	}
+	.hidden-menu>a {
+		color: black;
+		/*font-size: 16px;*/
+	}
+	.menu-item {
+		text-decoration: none;
+		color: black;
+	}
+	/*стиль логотипа*/
+	.logo_menu {
+		float: left;
+		display: inline-block;
+		padding: 0;
+		margin-top: 10px;
+	}
+	/*стиль номера и города*/
+	.info-menu-top {
+		display: inline-block;
+		padding: 0;
+		float: right;
+		margin-top: 10px;
+	}
+	.info-menu-top>li, a {
+		text-decoration: none;
+		color: black;
+		text-align: right;
+		list-style-type: none;
+	}
+	.h3-menu {
+		margin: 0;
+	}
+	.hidden-menu>li, ul {
+		display: inline-block;
+	}
+	.info-menu {
+		display: none;
+		visibility: hidden;
+	}
+	.btn-menu {
+		display: none;
+		visibility: hidden;
+	}
+
+	/*footer*/
+	footer {
+		position : relative;
+		margin: 0 0 0 0;
+		background-color: rgb(33, 31, 43);
+		height: 123px;
+		padding: 40px 0 0 0;
+	}
+	.footer {
+		margin: 0 5vw 0 5vw;
+	}
+	.footer>div, ul {
+		display: inline-block;
+	}
+	.li {
+		display: inline-block;
+	}
+	.footer-logo {
+		float: left;
+	}
+	.footer-menu {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.color-a {
+		color: #FFFFFF;
+		margin-right: 10px;
+	}
+}
+
+@media screen and (min-width: 1010px) {
+	body{
+		
+		/*background: radial-gradient(circle, black, white);*/
+		background: url(img/black-white.png) 1920px 570px;
+		background-position: -240px 74px;
+		background-repeat: no-repeat; 
+	}
+	header {
+		
+		margin: 0 15vw 0 15vw;
+		height: 150px;
+	}
+	main{
+		margin: 0 15vw 0 15vw;
+		/*padding: 0 15vw 0 15vw;*/
+	}
+	.news{
+		margin-top: 5em;
+	}
+	.advertising{
+		width: 50%;
+		height: 430px;
+		padding : 50px 0 0 0;
+		color: white;
+	}
+	/*новости*/
+	.title-news{
+		text-align: center;
+	 }
+	 /*форма*/
+	.from-input{
+		height: 2.8em;
+		width: 12em;
+		padding: 12px 20px;
+	}
+	.from-button{
+		height: 2.8em;
+		width: 12em;
+		background-color: #D51522;
+	}
+	/*скрытие ненужно в десктопе*/
+	.hidden-menu-ticker {
+		display: none;
+	}
+	.hidden-menu {
+		display: inline-block;
+		margin: 25px 0 0 40px;
+		padding: 0;
+		z-index: 1;
+		float: left;
+	}
+	/*стиль меню*/
+	.hidden-menu>li {
+		text-decoration: none;
+		margin-right: 20px;
+	}
+	.hidden-menu>a {
+		color: black;
+		/*font-size: 16px;*/
+	}
+	.menu-item {
+		text-decoration: none;
+		color: black;
+	}
+	/*стиль логотипа*/
+	.logo_menu {
+		float: left;
+		display: inline-block;
+		padding: 0;
+		margin-top: 10px;
+	}
+	/*стиль номера и города*/
+	.info-menu-top {
+		display: inline-block;
+		padding: 0;
+		float: right;
+		margin-top: 10px;
+	}
+	.info-menu-top>li, a {
+		text-decoration: none;
+		color: black;
+		text-align: right;
+		list-style-type: none;
+	}
+	.h3-menu {
+		margin: 0;
+	}
+	.hidden-menu>li, ul {
+		display: inline-block;
+	}
+	.info-menu {
+		display: none;
+		visibility: hidden;
+	}
+	.btn-menu {
+		display: none;
+		visibility: hidden;
+	}
+	/*footer*/
+	footer {
+		position : relative;
+		/*margin: 0 -150px 0 -150px 0;*/
+		background-color: rgb(33, 31, 43);
+		height: 123px;
+		padding: 40px 0 0 0;
+		width: auto;
+	}
+	.footer {
+		margin: 0 15vw 0 15vw;
+	}
+	.footer>div, ul {
+		display: inline-block;
+	}
+	.li {
+		display: inline-block;
+	}
+	.footer-logo {
+		float: left;
+	}
+	.footer-menu {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.color-a {
+		color: #FFFFFF;
+		margin-right: 10px;
+	}
+}
