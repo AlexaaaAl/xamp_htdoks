@@ -1,5 +1,5 @@
 <?php
-$config['smtp_username'] = 'mail@yandex.ru';  //Смените на адрес своего почтового ящика.
+$config['smtp_username'] = 'mail@yandex.ru';  //Смените на адрес почтового ящика.
 $config['smtp_port'] = '465'; // Порт работы.
 $config['smtp_host'] =  'ssl://smtp.yandex.ru';  //сервер для отправки почты
 $config['smtp_password'] = '1111';  //Измените пароль

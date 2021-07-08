@@ -80,7 +80,7 @@
 			Будем рады, если Вы обратитесь в наше Агентство. Мы готовы предложить Вам передовые решения для продвижения Вашего бизнеса.
 		</p>
 		<div id="results"> </div>
-		<form action="" class="form" onsubmit="call()">
+		<form action="" class="form" >
 			<input id="number" name="number" class="from-input" type="text" placeholder="Номер телефона">
 			<input type="button" value="Отправить" id="submit"  class="from-button"/>    
 		</form>
