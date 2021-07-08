@@ -34,11 +34,13 @@ footer {
 	.from-input{
 		height: 2.8em;
 		width: 10em;
+		color:white;
 		padding: 12px 20px;
 	}
 	.from-button{
 		height: 2.8em;
 		width: 10em;
+		color:white;
 		background-color: #D51522;
 	}
 	/*новости*/
@@ -211,11 +213,13 @@ footer {
 	.from-input{
 		height: 2.8em;
 		width: 10em;
+		color:white;
 		padding: 12px 20px;
 	}
 	.from-button{
 		height: 2.8em;
 		width: 10em;
+		color:white;
 		background-color: #D51522;
 	}
 	/*скрытие ненужно в десктопе*/
@@ -343,11 +347,13 @@ footer {
 	.from-input{
 		height: 2.8em;
 		width: 12em;
+		color:white;
 		padding: 12px 20px;
 	}
 	.from-button{
 		height: 2.8em;
 		width: 12em;
+		color:white;
 		background-color: #D51522;
 	}
 	/*скрытие ненужно в десктопе*/
@@ -439,4 +445,5 @@ footer {
 		color: #FFFFFF;
 		margin-right: 10px;
 	}
+
 }

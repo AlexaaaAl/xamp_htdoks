@@ -27,7 +27,8 @@
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic,latin' rel='stylesheet' type='text/css' />
   	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
 	<style type="text/css" >
 	    body {
 	        font-family : 'Ubuntu', sans-serif;
@@ -78,11 +79,10 @@
 		<p class="ubuntu" >
 			Будем рады, если Вы обратитесь в наше Агентство. Мы готовы предложить Вам передовые решения для продвижения Вашего бизнеса.
 		</p>
-		<form action="" class="form">
-			<input class="from-input" type="text" placeholder="Номер телефона">
-			<button class="from-button" type="submit" class="">Обратный звонок</button>
-			
-			
+		<div id="results"> </div>
+		<form action="" class="form" onsubmit="call()">
+			<input id="number" name="number" class="from-input" type="text" placeholder="Номер телефона">
+			<input type="button" value="Отправить" id="submit"  class="from-button"/>    
 		</form>
 
 		
@@ -127,6 +127,10 @@
 	    </ul>
   </div>
 </footer>
-</body>
+<script src="form_ajax.js"></script>
+<script src="mask.js"></script>
 <script src="script.js"></script>
+</body>
+
+
 </html>

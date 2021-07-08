@@ -62,8 +62,8 @@ const slider = (function(){
 			}
 			
 			_createControls(controlsInfo.dotsEnabled, controlsInfo.buttonsEnabled);
-			_render();		
-			_updateControlsInfo();
+			/*_render();		
+			_updateControlsInfo();*/
 
 			// Авторежим
 				// if (controlsInfo.autoMode) {
@@ -92,34 +92,7 @@ const slider = (function(){
 		//buttons ? createButtons() : null;
 		dots ? createDots() : null;
 		
-		// Arrows function
-		function createArrows() {
-			const dValueLeftArrow = "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z";
-			const dValueRightArrow = "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z";
-			const leftArrowSVG = createSVG(dValueLeftArrow);
-			const rightArrowSVG = createSVG(dValueRightArrow);
-			
-			leftArrow = createHTMLElement("div", "prev-arrow");
-			leftArrow.append(leftArrowSVG);
-			leftArrow.addEventListener("click", () => updateSliderPosition(itemsInfo.position.current - 1))
-			
-			rightArrow = createHTMLElement("div", "next-arrow");
-			rightArrow.append(rightArrowSVG);
-			rightArrow.addEventListener("click", () => updateSliderPosition(itemsInfo.position.current + 1))
 
-			sliderContentControls.append(leftArrow, rightArrow);
-			
-			// SVG function
-			function createSVG(dValue, color="currentColor") {
-				const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-				svg.setAttribute("viewBox", "0 0 256 512");
-				const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-				path.setAttribute("fill", color);
-				path.setAttribute("d", dValue);
-				svg.appendChild(path);	
-				return svg;
-			}
-		}
 
 		// Dots function
 		function createDots() {
@@ -135,46 +108,13 @@ const slider = (function(){
 			sliderContentControls.append(dotsWrapper);	
 		}
 		
-		// Buttons function
-		function createButtons() {
-			const controlsWrapper = createHTMLElement("div", "slider-controls");
-			prevButton = createHTMLElement("button", "prev-control", "Prev");
-			prevButton.addEventListener("click", () => updateSliderPosition(itemsInfo.position.current - 1))
-			
-			autoButton = createHTMLElement("button", "auto-control", "Auto");
-			autoButton.addEventListener("click", () => intervalId ? _stopAutoMode() : _startAutoMode())
-
-			nextButton = createHTMLElement("button", "next-control", "Next");
-			nextButton.addEventListener("click", () => updateSliderPosition(itemsInfo.position.current + 1))
-
-			controlsWrapper.append(prevButton, autoButton, nextButton);
-			slider.append(controlsWrapper);
-		}
+		
 	}
 
 	// выключить Авторежим
-	function _stopAutoMode () {
-		clearInterval(intervalId)
-		intervalId = null
-		if (autoButton) autoButton.textContent = 'Auto'
-	}
-
-	// включить Авторежим
-	function _startAutoMode () {
-		controlsInfo.autoMode = true	
-		if (autoButton) autoButton.textContent = 'Stop'
-		intervalId = setInterval(function(){
-			if (itemsInfo.position.current < itemsInfo.position.max) {
-				itemsInfo.update(itemsInfo.position.current + 1);
-			} else {
-				itemsInfo.reset();
-			}
-			_slideItem();
-		}, itemsInfo.intervalSpeed)
-	}
 
 	// Задать класс для контролов (buttons, arrows)
-	function setClass(options) {
+	/*function setClass(options) {
 		if (options) {
 			options.forEach(({ element, className, disabled }) => {
 				if (element) {
@@ -184,7 +124,7 @@ const slider = (function(){
 				}
 			})
 		}
-	}
+	}*/
 
 	// Обновить значения слайдера вручную(при этом выключаем авторщежим, если включен) 
 	function updateSliderPosition(value) {
@@ -209,7 +149,7 @@ const slider = (function(){
 		}
 		
 		// Отображаем/скрываем контроллы
-		setClass(controlsArray);
+		/*setClass(controlsArray);*/
 
 		// Передвигаем слайдер
 		sliderWrapper.style.transform = `translateX(${itemsInfo.offset * 100}%)`;	
@@ -250,4 +190,37 @@ slider.init({
 	buttons: true,
 	dots: true,
 	autoMode: true
+});
+
+/*маска номера телефона.. */
+window.addEventListener("DOMContentLoaded", function() {
+function setCursorPosition(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+    else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select()
+    }
+}
+
+function mask(event) {
+    var matrix = "+7 (___) ___ ____",
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, "");
+    if (def.length >= val.length) val = def;
+    this.value = matrix.replace(/./g, function(a) {
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+    });
+    if (event.type == "blur") {
+        if (this.value.length == 2) this.value = ""
+    } else setCursorPosition(this.value.length, this)
+};
+    var input = document.querySelector("#number");
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
 });
